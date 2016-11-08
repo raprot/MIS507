@@ -10,7 +10,7 @@ public class Deck{
     
  // private static int[] suitInt = {1,2,3,4};
   
- // private static int[] cardInt = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+ // private static int[] cardInt = {14,2,3,4,5,6,7,8,9,10,11,12,13};
   
   public static  String[] suitName = {"Spades", "Hearts", "Diamonds", 
                                       "Clubs"};
@@ -40,7 +40,13 @@ public class Deck{
  
  public Card getCard(){
   this.topCard = this.topCard - 1;
-  return this.newDeck[this.topCard];
+  if(this.topCard < 0){
+    System.out.println("Out of cards, shuffling the deck.");
+    this.topCard = 51;
+    shuffleDeck();
+    return this.newDeck[this.topCard];}
+  else{
+    return this.newDeck[this.topCard];}
 }
  
  public void shuffleDeck(){
@@ -53,12 +59,12 @@ public class Deck{
      this.newDeck[i] = shuffleCard;     
    }
    
-   for(int i = 0; i < this.newDeck.length; i++){
-       System.out.println(newDeck[i].getSuit() + " " + newDeck[i].getRank() + " " + newDeck[i].getSuitNumber()  + " " + newDeck[i].getRankNumber());
-     }
+  // for(int i = 0; i < this.newDeck.length; i++){
+       //System.out.println(newDeck[i].getSuit() + " " + newDeck[i].getRank() + " " + newDeck[i].getSuitNumber()  + " " + newDeck[i].getRankNumber());
+     //}
  }
    
-  
+  /*
   public static void main(String args[]){
     Card myCard, myCard2;
     
@@ -69,10 +75,19 @@ public class Deck{
     myCard = pokerDeck.getCard();
     myCard2 = pokerDeck.getCard();
     
+    
     System.out.println(myCard.getRank() + " " + myCard.getSuit() + " " + myCard.getSuitNumber() + " " + myCard.getRankNumber());
    
     System.out.println(myCard2.getRank() + " " + myCard2.getSuit() + " " + myCard2.getSuitNumber() + " " + myCard2.getRankNumber());
-   
-  }
+    System.out.println(newDeck[51].toString());
+    
+    
+    for(int i = 53; i > 0; i--){
+      pokerDeck.getCard();
+    }
+    
+    System.out.println(newDeck[51].toString());
+    
+  }*/
   
 }

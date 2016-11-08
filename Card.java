@@ -13,7 +13,7 @@ public class Card {
      }
      
 
-    public Card(String rank, String suit, int rankNumber, int suitNumber) {
+    public Card(String rank, String suit, int suitNumber, int rankNumber) {
         this.rank = rank;
         this.suit = suit;
         this.rankNumber = rankNumber;
@@ -52,4 +52,8 @@ public class Card {
         this.suitNumber = suitNumber;
     }    
        
+    public String toString(){
+      return (rank + " of " + suit + ". Has a integer rank value of " + rankNumber + 
+                           " and a integer suit value of " + suitNumber + ".");
+    }
 }
