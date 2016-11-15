@@ -1,20 +1,52 @@
+import java.util.*;
+
 public class Player
 {
-	private String memberName;
 	private String name;
 	private int chip;
 	private int bet;
-	private PokerHand playerHand;
+	private PlayerHand playerHand;
 	private Table currTable;
 
 	public Player()
 	{
-		memberName = "";
 		name = "";
 		chip = 0;
 		bet = 0;
-		playerHand = new PlayerHand;
+		playerHand = new PlayerHand();
 		currTable = null;
+	}
+
+	public String toString()
+	{
+		String out = "Player: " + getName();
+		out += "\nChip Amount: " + getChip();
+		if( currTable != null )
+			out += "\nTable: " + currTable.getTableName();
+		else
+			out += "\nTable: No Table";
+
+		ArrayList cards = playerHand.getHand();
+
+		if( cards.size() > 0 )
+		{
+			out += "\nCards: ";
+
+			Iterator<Card> cardList = cards.iterator();
+			while (cardList.hasNext())
+			{
+			  Card next = cardList.next();
+
+			  out += next.getSuit() + next.getRank();
+
+			  if( cardList.hasNext() )
+			  	out += ", ";
+			}
+		}
+		else
+			out += "\nPlayers: No Players";
+
+		return out;
 	}
 
 	public String getName()
@@ -75,7 +107,7 @@ public class Player
 		bet += amount;
 	}
 
-	public PokerHand getPlayerHand()
+	public PlayerHand getPlayerHand()
 	{
 		return playerHand;
 	}
@@ -90,10 +122,6 @@ public class Player
 		else
 			return false;
 	}
-}
-
-
-
 
 
 
