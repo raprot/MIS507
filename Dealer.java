@@ -1,7 +1,7 @@
 import java.until.*;
 
 
-public class Dealer(){
+public class Dealer{
 
 	protected Deck deck;
 	protected Table table;
@@ -38,11 +38,11 @@ public class Dealer(){
 		
 		// Get all current player, which doesn't fold/muck his/her hands.
 		ArrayList<Player> currentPlayers = getTable().getCurrentPlayers();
-		Card[5] winningHand = currentPlayers.get(0).getBestHand();
-		winners.add(currentPlayers.get(0))
+		Card[] winningHand = currentPlayers.get(0).getBestHand();
+		winners.add(currentPlayers.get(0));
 
-;		for (int i = 0; i < currentPlayers.size(); i++){
-			 card[5] bestHand = currentPlayers.get(i).getBestHand();
+		for (int i = 0; i < currentPlayers.size(); i++){
+			 Card[] bestHand = currentPlayers.get(i).getBestHand();
 			// winningHand.compareTo(bestHand) 
 			// winning hand is better than player's best hand, return 1
 			// winning hand is equal to player's best hand, return 0
@@ -50,7 +50,7 @@ public class Dealer(){
 			if (winningHand.compareTo(bestHand) <= 0 ){
 			 	winningHand = bestHand;
 			 	// winners.remove(currentPlayers.get(i));
-			 	winners.add(currentPlayers.get(i))
+			 	winners.add(currentPlayers.get(i));
 			 }
 		}
 	}
