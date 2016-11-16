@@ -38,7 +38,7 @@ public class Dealer{
 	// ============================ Start: Unfinished ============================
 	public void startHand(){
 		// 1. Suffle the deck
-		// 2. Gt ante from each player based on game type. Only get Ante from each player if ante > 0.
+		// 2. Get ante from each player based on game type. Only get Ante from each player if ante > 0.
 		// 3. Get small blind and big blind from two players at SB position and BB position
 		// 4. Burn Card (remove the first card on deck)
 		// 5. Give each player their card based on game type,
@@ -68,7 +68,6 @@ public class Dealer{
 				getTable().getCurrentPlayers.get( (buttonPosition + j) % currentNumPlayer ).setPlayerHand(card);
 			}		
 		}
-		
 	}
 
 	public void dealCommunityCard(){
