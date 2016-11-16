@@ -1,0 +1,26 @@
+import java.util.*;
+
+class PokerHand{
+  private Card[] hand = new Card[5];
+  private static  ArrayList<Card> temp = new ArrayList<>();
+  
+  public void compareTo(ArrayList<Card> hand){
+    Collections.sort(temp, new Comparator<Card>(){
+      @Override
+      public int compare(Card card1, Card card2)
+      { return card1.getRankNumber() - card2.getRankNumber();
+      }});
+  }
+  public static void getBestHand(ArrayList<Card> playerCard, ArrayList<Card> communityCard){
+    for(int i = 0; i < playerCard.size(); i++){
+      temp.add(playerCard.get(i));
+    }
+    for(int i = 0; i < communityCard.size(); i++){
+      temp.add(communityCard.get(i));
+    }
+  }
+  //Unecessary Code
+  public static ArrayList<Card> getTemp(){
+    return temp;
+  }
+}
