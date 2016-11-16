@@ -71,6 +71,7 @@ public class Dealer{
 	}
 
 	public void dealCommunityCard(){
+		// This is for Texas Hold'em and Omaha. For 7 Card Stud , 5 Card Draw. it won't be executed.
 		if(getGame().getNumCommunityCard() > 0){
 			// Burn card
 			getCard();
