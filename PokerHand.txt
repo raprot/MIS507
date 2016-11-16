@@ -24,3 +24,38 @@ class PokerHand{
     return temp;
   }
 }
+/*  
+  public static void main(String[] args){
+    Deck d = new Deck();
+    d.shuffleDeck();
+    PlayerHand p = new PlayerHand();
+    p.getPlayerCard(d.getCard());
+    p.getPlayerCard(d.getCard());
+    CommunityCard c = new CommunityCard();
+    c.getCommunityCards(d.getCard());
+    c.getCommunityCards(d.getCard());
+    c.getCommunityCards(d.getCard());
+    c.getCommunityCards(d.getCard());
+    c.getCommunityCards(d.getCard());
+    
+    PokerHand pk = new PokerHand();
+        
+   /* for(int i = 0; i < p.getPlayerHand().size(); i++){
+      System.out.println(p.getPlayerHand().get(i).toString());
+    }
+    
+    for(int i = 0; i < c.getCommunityHand().size(); i++){
+      System.out.println(c.getCommunityHand().get(i).toString());
+    }*/
+/*    
+    pk.getBestHand(p.getPlayerHand(), c.getCommunityHand());
+    pk.compareTo(pk.getTemp());
+
+    for(int i = 0; i < pk.getTemp().size(); i++){
+      System.out.println(pk.getTemp().get(i).toString());
+    }
+    
+    
+    
+  }
+}*/
