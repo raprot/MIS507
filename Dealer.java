@@ -36,7 +36,7 @@ public class Dealer{
 	}
 	
 	// ============================ Start: Unfinished ============================
-	public void startHand(){
+	public void startHands(){
 		// 1. Suffle the deck
 		// 2. Get ante from each player based on game type. Only get Ante from each player if ante > 0.
 		// 3. Get small blind and big blind from two players at SB position and BB position
@@ -84,7 +84,7 @@ public class Dealer{
 
 	}
 
-	public void endHand(){
+	public void endHands(){
 		// 1. Decide the winners
 		// 2  Move the button to the next player's position
 		decideWinners();
