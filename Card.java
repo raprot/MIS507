@@ -59,11 +59,11 @@ public class Card {
     public void setSuit(String suit) {
         this.suit = suit;
     }//Setter to set a Card object's suit String.
-
+*/
     public void setRankNumber(int rankNumber) {
         this.rankNumber = rankNumber;
     }//Setter to set a Card obects's rankNumber.
-
+/*
     public void setSuitNumber(int suitNumber) {
         this.suitNumber = suitNumber;
     }//Setter to set a Card object's suitNumber.    
