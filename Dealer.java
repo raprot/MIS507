@@ -23,16 +23,16 @@ public class Dealer{
 		this.name = name;
 		this.deck = null;
 		this.table = null;
-		this.game = null;
+		this.gameType = null;
 	}
 
 
-	public void setPokerGame(PokerGame game){
-		this.game = game;
+	public void setPokerGame(PokerGame gameType){
+		this.gameType = gameType;
 	}
 
 	public PokerGame getPokerGame(){
-		return this.game;
+		return this.gameType;
 	}
 	
 	// ============================ Start: Unfinished ============================
