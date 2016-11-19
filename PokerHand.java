@@ -49,10 +49,6 @@ class PokerHand implements Comparable<PokerHand>{
     }
     
     hand =  hsa.getBestHand(temp);
-    System.out.println("\n\n\n\n");
-     for(int i = 0; i < temp.size(); i++){
-      System.out.println(temp.get(i));
-    }
     handStrength = this.hsa.getHandStrengthVal();;
     temp.clear();
     return hand;
@@ -60,8 +56,10 @@ class PokerHand implements Comparable<PokerHand>{
   }
   
   //Unecessary Code
-  public static ArrayList<Card> getTemp(){
+  private static ArrayList<Card> getTemp(){
     return temp;
   }
+  
+  
 
 }
