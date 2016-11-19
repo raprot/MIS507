@@ -59,7 +59,4 @@ class PokerHand implements Comparable<PokerHand>{
   private static ArrayList<Card> getTemp(){
     return temp;
   }
-  
-  
-
 }
