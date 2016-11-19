@@ -69,8 +69,11 @@ public class Card {
     }//Setter to set a Card object's suitNumber.    
     */   
     public String toString(){
+      return(rank + String.valueOf(suit.charAt(0)));
+      /*toString implementation used for fine testing of cards
       return (rank + " of " + suit + ". Has a integer rank value of " + rankNumber + 
                            " and a integer suit value of " + suitNumber + ".");
+                           */
     }//AF implementation, allows a user to print the contents of a Card object.
     
     public boolean RepOK(Card testCard){
