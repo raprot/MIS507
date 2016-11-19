@@ -40,17 +40,7 @@ public class Card {
         return suitNumber;
     }//Getter to return a Card object's integer suitNumber.
     
-    public int compareTo(Card card1, Card card2){
-      int returnInt = 0;
-      
-      if(card1.getRankNumber() <= card2.getRankNumber()){
-        returnInt = -1;
-      } else if(card1.getRankNumber() >= card2.getRankNumber()){
-        returnInt = 1;
-      }
-      
-      return returnInt;
-    }
+     
 /*
     public void setRank(String rank) {
         this.rank = rank;
@@ -60,7 +50,7 @@ public class Card {
         this.suit = suit;
     }//Setter to set a Card object's suit String.
 */
-    public void setRankNumber(int rankNumber) {
+    public void setRankNumber(int rankNum) {
         this.rankNumber = rankNumber;
     }//Setter to set a Card obects's rankNumber.
 /*
