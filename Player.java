@@ -22,11 +22,11 @@ public class Player
 		String out = "Player: " + getName();
 		out += "\nChip Amount: " + getChip();
 		if( currTable != null )
-			out += "\nTable: " + currTable.getTableName();
+			out += "\nTable: " + currTable.getTableNum();
 		else
 			out += "\nTable: No Table";
 
-		ArrayList cards = playerHand.getHand();
+		ArrayList cards = playerHand.getPlayerHand();
 
 		if( cards.size() > 0 )
 		{
@@ -123,6 +123,16 @@ public class Player
 			return false;
 	}
 
+	public boolean leaveTable()
+	{
+		if( currTable.requestLeave(this) )
+		{
+			currTable = null;
+			return true;
+		}
+		else
+			return false;
+	}
 
 
 

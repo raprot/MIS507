@@ -1,4 +1,4 @@
-import java.until.*;
+import java.util.*;
 
 
 public class Dealer{
@@ -6,7 +6,7 @@ public class Dealer{
 	protected Deck deck;
 	protected Table table;
 	protected String name;
-	protected PokerGmae game;
+	protected PokerGame gameType;
 
 
 	// In Dealer Class, activePlayers is a list of players for this round of game.
@@ -34,7 +34,7 @@ public class Dealer{
 	public PokerGame getPokerGame(){
 		return this.gameType;
 	}
-	
+
 	// ============================ Start: Unfinished ============================
 	public void startHands(){
 		// 1. Suffle the deck
@@ -47,7 +47,7 @@ public class Dealer{
 		// step 1: Set deck and shuffle deck
 		setDeck();
 		shuffleDeck();
-		// step 2: Get antes 
+		// step 2: Get antes
 		if( getAnte() > 0){
 			getAnteFromPlayer();
 		}
@@ -58,15 +58,15 @@ public class Dealer{
 		// step 5: Give
 		// Give the first card, then second card, .....
 
-		int currentNumPlayer = getTable().getCurrentNumPlayer(); 
-		int buttonPosition = getTable().getButtonPosition(); 
-		
-		for (int i = 0; i < getPokerGame.getNumPlayerHands(); i ++){ 
-			// Give first player 
+		int currentNumPlayer = getTable().getCurrentNumPlayer();
+		int buttonPosition = getTable().getButtonPosition();
+
+		for (int i = 0; i < gameType.getNumPlayerHands(); i ++){
+			// Give first player
 			for (int j = 1; j <= getTable().getCurrentNumPlayer(); j++){
 				Card card = getCard();
-				getTable().getCurrentPlayers.get( (buttonPosition + j) % currentNumPlayer ).setPlayerHand(card);
-			}		
+				getTable().getCurrentPlayers().get( (buttonPosition + j) % currentNumPlayer ).setPlayerHand(card);
+			}
 		}
 	}
 
@@ -94,18 +94,18 @@ public class Dealer{
 	}
 
 	public void moveButton(){
-		int currentNumPlayer = getTable().getCurrentNumPlayer(); 
+		int currentNumPlayer = getTable().getCurrentNumPlayer();
 		int buttonPosition = getTable().getButtonPosition();
-		getTable().setButtonPosition((buttonPosition + 1) % currentNumPlayer); 
+		getTable().setButtonPosition((buttonPosition + 1) % currentNumPlayer);
 		getTable().clearPot();
 
 	}
 
-	// 
+	//
 	public ArrayList<Player> decideWinners(){
-		// a array to storage all winner; 
+		// a array to storage all winner;
 		ArrayList<Player> winners = new ArrayList<Player>();
-		
+
 		// Get all current player, which doesn't fold/muck his/her hands.
 		ArrayList<Player> currentPlayers = getTable().getCurrentPlayers();
 		Card[] winningHand = currentPlayers.get(0).getBestHand();
@@ -113,7 +113,7 @@ public class Dealer{
 
 ;		for (int i = 0; i < currentPlayers.size(); i++){
 			 Card[] bestHand = currentPlayers.get(i).getBestHand();
-			// winningHand.compareTo(bestHand) 
+			// winningHand.compareTo(bestHand)
 			// winning hand is better than player's best hand, return 1
 			// winning hand is equal to player's best hand, return 0
 			// winning hand is worse than player's best hand, return -1
@@ -181,7 +181,7 @@ public class Dealer{
 		// Get the ante from each player and add thess ante into pot.
 
 		for(int i = 0; i < getCurrentPlayers().size(); i++ ){
-			double ante = getCurrentPlayers.get(i).bet(getAnte());		 
+			double ante = getCurrentPlayers.get(i).bet(getAnte());
 		}	getTable().addPot(ante);
 	}
 
@@ -193,39 +193,39 @@ public class Dealer{
 		// Get big blin(BB) from one player at big blind position: index of BB player should be buttonPosition + 2
 
 
-		// Get 
+		// Get
 
 		int currentNumPlayer = getTable().getCurrentPlayers().size(); // <Option1>
 		// int currentNumPlayer = getTable().getCurrentNumPlayer(); <Option2>
-		
-		
+
+
 		// button positon should be the index of array list of players, ArrayList<Player>
-		
-		int buttonPosition = getTable().getButtonPosition(); 
-		
+
+		int buttonPosition = getTable().getButtonPosition();
+
 		// Get button position, small blind position, and big blind position
-		
+
 		int smallBlindPostion = (buttonPosition + 1) % currentNumPlayer ;
 		int bigBlindPosition = (buttonPostion + 2) % currentNumPlayer;
-		
+
 		// Find the player at small blind position and player will bet amount equal to small blind
 		Player smallBlindPlayer = getTable().getCurrentPlayers().get(smallBlindPostion);
 		double smallBlind = smallBlindPlayer.bet(getSmallBlind());
 
 		// Find the player at big blind position and player will bet amount equal to Big blind
-		Player bigBlindPlayer = getTable().getCurrentPlayers.get(bigBlindPosition);
+		Player bigBlindPlayer = getTable().getCurrentPlayers().get(bigBlindPosition);
 		double bigBlind = bigBlindPlayer.bet(getBigBlind());
 
 		// Add the small blind and big blind into pot
 		getTable().addPot(smallBlind);
 		getTable().addPot(bigBlind);
-			
+
 	}
 
 	public ArrayList<Player> getActivePlayer(){
 		return activePlayers;
 
-	} 
+	}
 
 
-}	
+}

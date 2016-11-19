@@ -2,35 +2,34 @@ import java.util.*;
 
 public class Table
 {
-	private String name;
-	private ArrayList players;
+	private int tableNum;
+	private ArrayList<Player> players;
 	private int buttonPosition;
 	private Dealer dealer;
-	private int potSize;
+	private double pot;
 	private int maxNumPlayer;
-	private ArrayList pots;
+	private CommunityCard communityCards;
 
 	public Table()
 	{
-		name = "";
+		tableNum = 0;
 		players = new ArrayList();
+		communityCards = new CommunityCard();
 		buttonPosition = 0;
 		dealer = null;
-		potSize = 0;
+		pot = 0;
 		maxNumPlayer = 4;
-		pots = new ArrayList();
 	}
 
 	public String toString()
 	{
-		String out = "Table: " + getTableName();
+		String out = "Table: " + getTableNum();
 		if( dealer != null )
 			out += "\nDealer: " + (getDealer()).getName();
 		else
 			out += "\nDealer: No Dealer";
 		out += "\nNum of Players: " + players.size() + "/" + maxNumPlayer;
-		out += "\nPot Size: " + potSize;
-		out += "\nNum of Pots: " + pots.size();
+		out += "\nPot Size: " + pot;
 		out += "\nButton Pos: " + getButtonPosition();
 
 		if( players.size() > 0 )
@@ -50,14 +49,24 @@ public class Table
 		return out;
 	}
 
-	public String getTableName()
+	public int getTableNum()
 	{
-		return name;
+		return tableNum;
 	}
 
 	public Player getPlayer(int pos)
 	{
 		return (Player)players.get(pos);
+	}
+
+	public ArrayList<Player> getCurrentPlayers()
+	{
+		return players;
+	}
+
+	public int getCurrentNumPlayer()
+	{
+		return players.size();
 	}
 
 	public boolean requestJoin(Player in)
