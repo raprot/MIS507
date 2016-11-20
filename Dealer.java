@@ -61,7 +61,8 @@ public class Dealer{
 		int currentNumPlayer = getTable().getCurrentNumPlayer();
 		int buttonPosition = getTable().getButtonPosition();
 
-		for (int i = 0; i < gameType.getNumPlayerHands(); i ++){
+		for (int i = 0; i < getPokerGame().getNumPlayerHands(); i ++)
+		{
 			// Give first player
 			for (int j = 1; j <= getTable().getCurrentNumPlayer(); j++){
 				Card card = getCard();
@@ -182,7 +183,8 @@ public class Dealer{
 
 		for(int i = 0; i < getCurrentPlayers().size(); i++ ){
 			double ante = getCurrentPlayers.get(i).bet(getAnte());
-		}	getTable().addPot(ante);
+		}	//getTable().addPot(ante);
+
 	}
 
 

@@ -17,5 +17,4 @@ public class TightPlayer extends AIPlayer
 	{
 		return betDegree;
 	}
-
 }

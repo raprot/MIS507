@@ -17,7 +17,7 @@ public class Table
 		communityCards = new CommunityCard();
 		buttonPosition = 0;
 		dealer = null;
-		pot = 0;
+		pot = 0.0;
 		maxNumPlayer = 4;
 	}
 
@@ -118,5 +118,13 @@ public class Table
 			buttonPosition+= 1;
 	}
 
+	public void clearPot()
+	{
+		pot = 0.0;
+	}
 
+	public void addPot(double amount)
+	{
+		pot += amount;
+	}
 }

@@ -26,7 +26,7 @@ public class Player
 		else
 			out += "\nTable: No Table";
 
-		ArrayList cards = playerHand.getPlayerHand();
+		ArrayList<Card> cards = playerHand.getCards();
 
 		if( cards.size() > 0 )
 		{
@@ -133,7 +133,4 @@ public class Player
 		else
 			return false;
 	}
-
-
-
 }

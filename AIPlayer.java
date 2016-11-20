@@ -11,5 +11,4 @@ abstract public class AIPlayer extends Player
 	abstract public void setBettingDegree(double degree);
 
 	abstract public double getBettingDegree();
-
 }
