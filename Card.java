@@ -10,6 +10,33 @@ public class Card {
                  suitNumber; //Int variable to capture the suit value of any
                              //card
      
+     //AF: "rank" refers to the displayed string face value of a card.
+     //"suit refers to the displayed string value of a card.
+     //"rankNumber" refers to the integer face value of a card used for hand
+     // strength comparisons.
+     //"suitNumber" refers to the integer suit value, used to find out if a 
+     //hand is a flush.
+     //RI: rank and suit should not be nil. rankNumber should be between 2 and 
+     //14. suitNumber should be between 1 and 4.
+     
+     //AF implementation, allows a user to print the contents of a Card object.
+     public String toString(){
+      return(rank + String.valueOf(suit.charAt(0)));
+      /*toString implementation used for fine testing of cards
+      return (rank + " of " + suit + ". Has a integer rank value of " + rankNumber + 
+                           " and a integer suit value of " + suitNumber + ".");
+                           */
+    }     
+     
+    //RI implementation of a Card object to validate that the contents of 
+    //a card object are logically correct.      
+    public boolean repOK(){
+      return ((rankNumber >= 2 && rankNumber <= 14) &&
+              (suitNumber >= 1 && suitNumber <= 4) &&
+              (suit != null && rank != null));
+    }//RI implementation of a Card object to validate that the contents of 
+     //a card object are logically correct.    
+     
      public Card(){
          
      } //Default construtor. Creates an empty null card.
@@ -58,18 +85,4 @@ public class Card {
         this.suitNumber = suitNumber;
     }//Setter to set a Card object's suitNumber.    
     */   
-    public String toString(){
-      return(rank + String.valueOf(suit.charAt(0)));
-      /*toString implementation used for fine testing of cards
-      return (rank + " of " + suit + ". Has a integer rank value of " + rankNumber + 
-                           " and a integer suit value of " + suitNumber + ".");
-                           */
-    }//AF implementation, allows a user to print the contents of a Card object.
-    
-    public boolean RepOK(Card testCard){
-      return ((testCard.getRankNumber() >= 2 && testCard.getRankNumber() <= 14) &&
-              (testCard.getSuitNumber() >= 1 && testCard.getSuitNumber() <= 4) &&
-              (testCard.getSuit() != null && testCard.getRank() != null));
-    }//RI implementation of a Card object to validate that the contents of 
-     //a card object are logically correct.
 }

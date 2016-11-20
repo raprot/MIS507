@@ -1,22 +1,59 @@
 import java.util.*;
 
 public class HandStrengthAnalyzer{
-  private ArrayList<Card> kicker = new ArrayList<>();
-  private ArrayList<Card> flushList = new ArrayList<>();
+  private ArrayList<Card> kicker;
+  private ArrayList<Card> flushList;
   private int[] setStrengthArray;
-  private int   handStrengthVal = 0,
-                highSet = 0,
-                lowSet = 0,
-                highSetIdx = 0,
-                lowSetIdx = 0,
-                flushSuit = 0,
-                straightIdx = 0,
-                straightInc = 0,
-                lowStraightInd = 0,
-                handSetter = 0,
+  private int   handStrengthVal,
+                highSet,
+                lowSet,
+                highSetIdx,
+                lowSetIdx,
+                flushSuit,
+                straightIdx,
+                straightInc,
+                lowStraightInd,
+                handSetter,
                 kickerLimit;
 
   private Card[] bestHand = new Card[5];
+  
+  public HandStrengthAnalyzer(){
+           this.kicker = new ArrayList<>();
+           this.flushList = new ArrayList<>();
+           this.handStrengthVal = 0;
+           this.highSet = 0;
+           this.lowSet = 0;
+           this.highSetIdx = 0;
+           this.lowSetIdx = 0;
+           this.flushSuit = 0;
+           this.straightIdx = 0;
+           this.straightInc = 0;
+           this.lowStraightInd = 0;
+           this.handSetter = 0;
+           this.kickerLimit = 0;    
+  }
+  
+  
+
+  public Card[] getBestHand(ArrayList<Card> hand){
+    sortArrayListRank(hand);
+    setHandStregnthVal(hand);
+
+    if(this.handStrengthVal == 8){
+      setStraight(hand);
+    }
+      else if(this.handStrengthVal >= 6 ||
+              this.handStrengthVal <= 3){
+      setSets(hand);}
+      else if(this.handStrengthVal == 5){
+      setFlush(hand);}
+      else if(this.handStrengthVal == 4){
+      setStraight(hand);}
+
+    return bestHand;
+
+  }
 
   private int[] getsetStrengthArray(){
     return this.setStrengthArray;
@@ -155,7 +192,7 @@ public class HandStrengthAnalyzer{
 
   }
 
-  public int checkStraight(ArrayList<Card> hand){
+  private int checkStraight(ArrayList<Card> hand){
     sortArrayListRank(hand);
     int c1 = 1;
     int st = 0;
@@ -397,32 +434,12 @@ public class HandStrengthAnalyzer{
 
      kickerLimit = handSetter;
      
-     for(int i = kicker.size() - 1; i >= 0; i--){
+     for(int i = 0; i < kicker.size(); i++){
         bestHand[kickerLimit] = kicker.get(i);
         kickerLimit++;
       }//Fill the best hand with the kicker cards.
    }//Fills the best hand with High Card, Pair, 2 Pair, 3 of a Kind, Full House, and
     //Four of a Kind hands.
 
- 
-
-  public Card[] getBestHand(ArrayList<Card> hand){
-    sortArrayListRank(hand);
-    setHandStregnthVal(hand);
-
-    if(this.handStrengthVal == 8){
-      setStraight(hand);
-    }
-      else if(this.handStrengthVal >= 6 ||
-              this.handStrengthVal <= 3){
-      setSets(hand);}
-      else if(this.handStrengthVal == 5){
-      setFlush(hand);}
-      else if(this.handStrengthVal == 4){
-      setStraight(hand);}
-
-    return bestHand;
-
-  }
  
 }

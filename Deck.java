@@ -14,11 +14,49 @@ public class Deck{
                                       "Clubs"};//Default Deck Suits. Public
                                                //so that it can be overwritten.
   
-  public static  String[] rankName = {"Ace", "Two", "Three", "Four", "Five",
-                                       "Six", "Seven", "Eight", "Nine",
-                                       "Ten", "Jack", "Queen", "King"};
+  public static  String[] rankName = {"A", "2", "3", "4", "5",
+                                       "6", "7", "8", "9",
+                                       "10", "J", "Q", "K"};
                                       //Default Deck Ranks. Public so that it
                                       //can be overwritten.
+  
+                                   /*{"A", "Two", "Three", "Four", "Five",
+                                       "Six", "Seven", "Eight", "Nine",
+                                       "Ten", "Jack", "Queen", "King"};*/
+                                    //Array to store actual card names
+  
+ //AF: "DECK_SIZE" is a final integer to store the number of cards in a deck object.
+ //"newDeck" is a Card array to store the the cards as they are created in a Deck object.
+ //"topCard" is a integer that tracks the current top card in the deck array.
+ //"suitName" is a String Array that stores the name of the suits in a deck.
+ //"rankName" is a String Array that stores the name of the ranks in a deck.
+ //RI: Every index position in newDeck should not be nill.
+  
+  
+ //AF implementation for the Deck Class. 
+ public String toString(){
+  String returnString = "";
+  for(int i = 0; i < this.newDeck.length; i++){
+      
+    returnString += (newDeck[i].getSuit() + " " + 
+                                  newDeck[i].getRank() + " " + 
+                                  newDeck[i].getSuitNumber() + " " + 
+                                  newDeck[i].getRankNumber() + "\n");
+     }
+  
+  return returnString;
+ }
+  
+  
+ public boolean repOK(){
+   boolean testRepOk = true;
+   for(int i = 0; i < newDeck.length; i++){
+     if(testRepOk = true){
+       testRepOk = !(newDeck[i] == null);
+     }
+   }
+   return testRepOk;
+ }   
                         
  public Deck(){
     
@@ -70,66 +108,11 @@ public class Deck{
   //does not stray far from the outline given by the source material.
  
   
- public int getNbrCardsInDeck(){
+ public int getNumCardsInDeck(){
    return topCard + 1;
  }//Getter to return the number of cards left in the deck.
  
  public Card[] getDeck(){
    return newDeck;
  }//Getter to return the Card[] a Deck type object holds.
- 
-
- public String toString(){
-  String returnString = "";
-  for(int i = 0; i < this.newDeck.length; i++){
-      
-    returnString += (newDeck[i].getSuit() + " " + 
-                                  newDeck[i].getRank() + " " + 
-                                  newDeck[i].getSuitNumber() + " " + 
-                                  newDeck[i].getRankNumber() + "\n");
-     }
-  
-  return returnString;
- }//AF implementation for the Deck Class.
- 
- public boolean RepOk(Deck testDeck){
-   boolean testRepOk = true;
-  /* for(int i = 0; i < this.testDeck.getDeck().length; i++){
-     testRepOK = (this.testDeck.getDeck()[i].RepOK && testDeck[i] != null);
-       if(!testRepOk){break;}
-    }*/
-   return testRepOk;
- }
-  
-/*  
-  public static void main(String args[]){
-    Card testCard;
-    Card myCard, myCard2;
-    
-    Deck pokerDeck = new Deck();
-    
-    pokerDeck.shuffleDeck();
-    
-    myCard = pokerDeck.getCard();
-    myCard2 = pokerDeck.getCard();
-    
-    
-    System.out.println(myCard.getRank() + " " + myCard.getSuit() + " " + myCard.getSuitNumber() + " " + myCard.getRankNumber());
-   
-    System.out.println(myCard2.getRank() + " " + myCard2.getSuit() + " " + myCard2.getSuitNumber() + " " + myCard2.getRankNumber());
-    System.out.println(newDeck[51].toString());
-    
-    
-    for(int i = 53; i > 0; i--){
-      pokerDeck.getCard();
-    }
-        
-    System.out.println(newDeck[51].RepOK(newDeck[51]));
-    
-    System.out.println(pokerDeck.toString());
-    
-    System.out.println(newDeck[51].toString());
-    
-  }
-  */
 }
