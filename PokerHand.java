@@ -65,47 +65,4 @@ class PokerHand implements Comparable<PokerHand>{
   private static ArrayList<Card> getTemp(){
     return temp;
   }
-  
-  public static void main(String args[]){
-    Card[] catcher = new Card[5];
-    System.out.println("Test");
-    
-    PlayerHand ph = new PlayerHand();
-    CommunityCard cc = new CommunityCard();
-    
-    PokerHand pk = new PokerHand();
-    
-    Deck d = new Deck();
-    
-    d.shuffleDeck();
-    
-    for(int i = 0; i < 7; i++){
-      cc.setCard(d.getCard());
-    }
-    
-    System.out.println("Test\n\n\n\n");
-    
-    for(int i = 0; i < cc.getCards().size(); i++){
-    System.out.println(cc.getCards().get(i));
-    }
-    
-    System.out.println("\n\n\n\n");
-    
-    for(int i = 0; i < 2; i++){
-      ph.setCard(d.getCard());
-    }
-    
-    for(int i = 0; i < ph.getCards().size(); i++){
-    System.out.println(ph.getCards().get(i));
-    }
-    
-    System.out.println("\n\n\n\n");
-    
-    catcher = pk.getBestHand(ph.getCards(),cc.getCards());
-    
-    for(int i = 0; i < pk.getHand().length; i++){
-    System.out.println(pk.getHand()[i]);
-    }
-     
-  }
-}
+ }

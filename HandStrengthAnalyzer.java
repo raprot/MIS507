@@ -37,6 +37,23 @@ public class HandStrengthAnalyzer{
   
 
   public Card[] getBestHand(ArrayList<Card> hand){
+    
+    if(bestHand[1] !=null){
+      this.kicker = new ArrayList<>();
+           this.flushList = new ArrayList<>();
+           this.handStrengthVal = 0;
+           this.highSet = 0;
+           this.lowSet = 0;
+           this.highSetIdx = 0;
+           this.lowSetIdx = 0;
+           this.flushSuit = 0;
+           this.straightIdx = 0;
+           this.straightInc = 0;
+           this.lowStraightInd = 0;
+           this.handSetter = 0;
+           this.kickerLimit = 0;} 
+           
+    
     sortArrayListRank(hand);
     setHandStregnthVal(hand);
 
@@ -49,7 +66,7 @@ public class HandStrengthAnalyzer{
       else if(this.handStrengthVal == 5){
       setFlush(hand);}
       else if(this.handStrengthVal == 4){
-      setStraight(hand);}
+        setStraight(hand);}
 
     return bestHand;
 
