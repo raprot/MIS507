@@ -1,8 +1,8 @@
-public class TableFactory extends PokerGameFactory{
-	public Table createTable(){
+public class TableFactory extends PokerFactory{
+	public static Table createTable(){
 		return new Table();
 	}
-	public Table createTable(int tableNum, int maxNumPlayer, Dealer dealer){
-		return new Table(tableNum, maxNumPlayer, dealer);
+	public static Table createTable(int tableNum, int maxNumPlayer){
+		return new Table(tableNum, maxNumPlayer);
 	}
 }

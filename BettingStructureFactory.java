@@ -1,13 +1,26 @@
-public class BettingStructureFactory extends PokerGameFactory{
-	// public BettingStructure createBettingStructure(){
-	// 	return new BettingStructure();
-	// }
-	public BettingStructure createBettingStructure(String structure){
-		if (gameType.equalsIgnoreCase("limit")){
-			return Limit();
+public class BettingStructureFactory extends PokerFactory{
+	// Return Limit Object or NoLimt Object based on argument
+	public static BettingStructure createBettingStructure(String structure){
+		if (structure.equalsIgnoreCase("Limit")){
+			return new Limit();
 		}
-		else {
-			return Noliimt();
+		else if (structure.equalsIgnoreCase("NoLimit")) {
+			return new Noliimt();
+		}
+		else{
+			return null;
+		}
+	}
+
+	public static BettingStructure createBettingStructure(String structure, double smallBlind, double bigBlind){
+		if (structure.equalsIgnoreCase("Limit")){
+			return new Limit(smallBlind, bigBlind);
+		}
+		else if (structure.equalsIgnoreCase("NoLimit")) {
+			return new Noliimt(smallBlind, bigBlind);
+		}
+		else{
+			return null;
 		}
 	}
 }
