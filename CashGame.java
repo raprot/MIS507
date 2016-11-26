@@ -25,8 +25,8 @@ public class CashGame extends GameType{
   //Getter for CashGame objects that returns the current game type.
   
   public String toString(){
-    return ("Table ante is $" + this.ante + " the current game type is " + 
-            this.type + ".");
+    return ("The current game type is " + this.type + " and the ante is $" + 
+            this.ante + ".");
   }//AF implementation for CashGame objects.
   
  public boolean repOK(){

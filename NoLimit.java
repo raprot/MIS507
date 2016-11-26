@@ -3,9 +3,9 @@ public class NoLimit extends BettingStructure{
   public NoLimit(){
   }//Default constructor for "NoLimit" type objects.
   
-  public NoLimit(double bigBlind, double smallBlind){
-    this.bigBlind = bigBlind;
+  public NoLimit(double smallBlind, double bigBlind){
     this.smallBlind = smallBlind;
+    this.bigBlind = bigBlind;
   }//Constructor for "Limit" type objects that sets the big and small blinds.
   
   public void setBigBlind(Double bigBlind){

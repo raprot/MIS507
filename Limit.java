@@ -3,9 +3,9 @@ public class Limit extends BettingStructure{
   public Limit(){
   }//Default constructor for "Limit" type objects.
   
-  public Limit(double bigBlind, double smallBlind){
-    this.bigBlind = bigBlind;
+  public Limit(double smallBlind, double bigBlind){
     this.smallBlind = smallBlind;
+    this.bigBlind = bigBlind;
   }//Constructor for "Limit" type objects that sets the big and small blinds.
   
   public void setBigBlind(Double bigBlind){

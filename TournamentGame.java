@@ -26,8 +26,8 @@ public class TournamentGame extends GameType{
   //Getter for TournamentGame objects that returns the type variable.
   
   public String toString(){
-    return ("Table ante is " + this.ante + " chips the current game type is " + 
-            this.type + ".");
+    return ("The current game type is " + this.type + " and the ante is $" + 
+            this.ante + ".");
   }//AF implementation of a tournament game object.
   
   public boolean repOK(){

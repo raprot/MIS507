@@ -20,16 +20,5 @@ public abstract class BettingStructure{
   abstract public boolean repOK();
   //RI implementation for the Abstract Betting Structure class.
   
-  public static void main(String[] args){
-    
-    Limit limitTable = new Limit(2.00, 4.00);
-    
-    NoLimit noLimitTable =  new NoLimit(50,100);
-    
-    System.out.println(limitTable.toString());
-    
-    System.out.println(noLimitTable.toString());
-    
-  }
    
 }
