@@ -1,20 +1,33 @@
 public class TightPlayer extends AIPlayer
 {
-	private double betDegree;
+	private double betStrategy;
 
 	public TightPlayer(PlayerStyle ps)
 	{
 		super(ps);
-		betDegree = 0;
+		betStrategy = 0;
 	}
 
-	public void setBettingDegree(double degree)
+	public void setBetStrategy(double strategy)
 	{
-		betDegree = degree;
+		betStrategy = strategy;
 	}
 
-	public double getBettingDegree()
+	public double getBetStrategy()
 	{
-		return betDegree;
+		return betStrategy;
+	}
+
+	public String toString()
+	{
+		return "Bet Strategy: " + betStrategy;
+	}
+
+	public boolean repOK()
+	{
+		if( betStrategy < 0 )
+			return false;
+		else
+			return true;
 	}
 }
