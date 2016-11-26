@@ -1,8 +1,8 @@
 public class PokerGame{
   int numPlayerCards;
   int numCommunityCards;
-  private BettingStructure bettingStructure;
-  private GameType gameType;
+  BettingStructure bettingStructure;
+  GameType gameType;
   
   public PokerGame(){
   }
@@ -11,7 +11,7 @@ public class PokerGame{
     this.gameType = gameType;
     this.bettingStructure = bettingStructure;
   }
-  
+    
   public GameType getGameType(){
     return gameType;
   }
@@ -47,7 +47,7 @@ public class PokerGame{
     
     PokerGame pg = new TexasHoldEm(bs, gt);
     
-    System.out.println(pg.repOK());
+    System.out.println(pg);
     
     
   }

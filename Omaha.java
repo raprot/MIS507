@@ -5,4 +5,10 @@ public class Omaha extends PokerGame{
     numPlayerCards = 4;
     numCommunityCards = 5;
   }
+  
+  public String toString(){
+    return ("This is an Omaha game. Each player gets " + numPlayerCards + 
+            " cards, and there are " + numCommunityCards + " community cards.\n"
+            + gameType + " " + bettingStructure);
+  }
 }
