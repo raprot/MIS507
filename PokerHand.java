@@ -1,12 +1,16 @@
 import java.util.*;
 
 class PokerHand implements Comparable<PokerHand>{
+  private PlayerHand playerHand;
+  private CommunityCard communityCard;
   private HandStrengthAnalyzer hsa;
   private Card[] hand;
   private static  ArrayList<Card> temp;
   private int handStrength;
   
-  public PokerHand(){
+  public PokerHand(PlayerHand playerHand, CommunityCard communityCard){
+    this.playerHand = playerHand;
+    this.communityCard = communityCard;
     this.hsa = new HandStrengthAnalyzer();
     this.hand = new Card[5];
     this.temp = new ArrayList<>();
@@ -46,12 +50,12 @@ class PokerHand implements Comparable<PokerHand>{
     return hand;
   }
     
-  public Card[] getBestHand(ArrayList<Card> playerCard, ArrayList<Card> communityCard){
-    for(int i = 0; i < playerCard.size(); i++){
-      this.temp.add(playerCard.get(i));
+  public Card[] getBestHand(){
+    for(int i = 0; i < playerHand.getCards().size(); i++){
+      this.temp.add(playerHand.getCards().get(i));
     }
-    for(int i = 0; i < communityCard.size(); i++){
-      this.temp.add(communityCard.get(i));
+    for(int i = 0; i < communityCard.getCards().size(); i++){
+      this.temp.add(communityCard.getCards().get(i));
     }
     
     hand =  hsa.getBestHand(temp);
@@ -65,4 +69,4 @@ class PokerHand implements Comparable<PokerHand>{
   private static ArrayList<Card> getTemp(){
     return temp;
   }
- }
+}
