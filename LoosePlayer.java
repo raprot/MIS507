@@ -2,9 +2,9 @@ public class LoosePlayer extends AIPlayer
 {
 	private double betStrategy;
 
-	public LoosePlayer(PlayerStyle ps)
+	public LoosePlayer()
 	{
-		super(ps);
+		super();
 		betStrategy = 0;
 	}
 

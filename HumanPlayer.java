@@ -1,22 +1,22 @@
-abstract public class HumanPlayer extends Player
-{
-	public HumanPlayer()
-	{
-		super();
+import java.util.*;
+// Class made by Johnny
+public class HumanPlayer extends Player{
+
+	public HumanPlayer(){
+		this.name = "";
+		this.chip = 0;
+		this.bet = 0;
+		this.playerHand = new PlayerHand();
+		this.table = null;
 	}
 
-	//Creates graphical user interface to interact with player.
-	public void createGUI()
-	{
-	}
+	
+	public HumanPlayer(String name, double chip){
+		this.name = name;
+		this.chip = chip; 
+		this.bet = 0;
+		this.playerHand = new PlayerHand();
+		this.table = null;
+	}	
 
-	public String toString()
-	{
-		return "";
-	}
-
-	public boolean repOK()
-	{
-		return true;
-	}
 }

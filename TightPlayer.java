@@ -2,9 +2,9 @@ public class TightPlayer extends AIPlayer
 {
 	private double betStrategy;
 
-	public TightPlayer(PlayerStyle ps)
+	public TightPlayer()
 	{
-		super(ps);
+		super();
 		betStrategy = 0;
 	}
 

@@ -1,15 +1,15 @@
 public class DealerFactory extends PokerFactory{
-	public static Dealer createDealer(String dealType){
-		if (dealType.equalsIgnoreCase("Draw")){
+	public static Dealer createDealer(String pokerType){
+		if (pokerType.equalsIgnoreCase("Draw")){
 			return new DrawDealer();
 		}
-		else if (dealType.equalsIgnoreCase("Stud")){
+		else if (pokerType.equalsIgnoreCase("Stud")){
 			return new StudDealer();
 		}
-		else if (dealType.equalsIgnoreCase("Holdem")){
+		else if (pokerType.equalsIgnoreCase("Holdem")){
 			return new HoldemDealer();
 		}
-		else if (dealType.equalsIgnoreCase("Omaha")){
+		else if (pokerType.equalsIgnoreCase("Omaha")){
 			return new OmahaDealer();
 		}
 		else{
@@ -17,17 +17,17 @@ public class DealerFactory extends PokerFactory{
 		}
 		
 	}
-	public static Dealer createDealer(String dealType, String name){
-		if (dealType.equalsIgnoreCase("Draw")){
+	public static Dealer createDealer(String pokerType, String name){
+		if (pokerType.equalsIgnoreCase("Draw")){
 			return new DrawDealer(name);
 		}
-		else if (dealType.equalsIgnoreCase("Stud")){
+		else if (pokerType.equalsIgnoreCase("Stud")){
 			return new StudDealer(name);
 		}
-		else if (dealType.equalsIgnoreCase("Holdem")){
+		else if (pokerType.equalsIgnoreCase("Holdem")){
 			return new HoldemDealer(name);
 		}
-		else if (dealType.equalsIgnoreCase("Omaha")){
+		else if (pokerType.equalsIgnoreCase("Omaha")){
 			return new OmahaDealer(name);
 		}
 		else{

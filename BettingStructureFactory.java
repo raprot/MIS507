@@ -5,7 +5,7 @@ public class BettingStructureFactory extends PokerFactory{
 			return new Limit();
 		}
 		else if (structure.equalsIgnoreCase("NoLimit")) {
-			return new Noliimt();
+			return new NoLimit();
 		}
 		else{
 			return null;
@@ -17,7 +17,7 @@ public class BettingStructureFactory extends PokerFactory{
 			return new Limit(smallBlind, bigBlind);
 		}
 		else if (structure.equalsIgnoreCase("NoLimit")) {
-			return new Noliimt(smallBlind, bigBlind);
+			return new NoLimit(smallBlind, bigBlind);
 		}
 		else{
 			return null;

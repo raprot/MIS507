@@ -1,10 +1,10 @@
 public class PlayerFactory extends PokerFactory{
 	public static Player createPlayer(String playerType){
 
-		if (gameType.equalsIgnoreCase("Human")){
+		if (playerType.equalsIgnoreCase("Human")){
 			return new HumanPlayer();
 		}
-		else if (gameType.equalsIgnoreCase("AI")){
+		else if (playerType.equalsIgnoreCase("AI")){
 			return new AIPlayer();
 		}
 		else{
@@ -15,10 +15,10 @@ public class PlayerFactory extends PokerFactory{
 
 	public static Player createPlayer(String playerType, String name, double chip){
 
-		if (gameType.equalsIgnoreCase("human")){
+		if (playerType.equalsIgnoreCase("Human")){
 			return new HumanPlayer(name, chip);
 		}
-		else if (gameType.equalsIgnoreCase("AI")){
+		else if (playerType.equalsIgnoreCase("AI")){
 			return new AIPlayer(name, chip);
 		}
 		else{

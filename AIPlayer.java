@@ -1,29 +1,64 @@
-abstract public class AIPlayer extends Player
+public class AIPlayer extends Player
 {
-	protected PlayerStyle style;
-	private String name;
+	// protected PlayerStyle startHandSelection;
+	// protected PlayerStyle bettingPattern;
+	protected PlayerStyle playerStyle;
 
-	public AIPlayer(PlayerStyle ps)
-	{
+	public AIPlayer(){
 		super();
-		style = ps;
-		name = "Jane Doe";
+		// this.name = "";
+		// this.chip = 0;
+		// this.bet = 0;
+		// this.playerHand = new PlayerHand();
+		// this.table = null;		
+		// this.startHandSelection = null;
+		// this.bettingPattern = null;
+		this.playerStyle = null;
 	}
 
-	abstract public void setBettingDegree(double degree);
-
-	abstract public double getBettingDegree();
-
-	public String toString()
-	{
-		return name + ": " + style;
+	// Add a constructor with parameters by Johnny
+	public AIPlayer(String name, double chip){
+		super(name, chip);
+		// this.name = name;
+		// this.chip = chip;
+		// this.bet = 0;
+		// this.playerHand = new PlayerHand();
+		// this.table = null;
+		// this.startHandSelection = null;
+		// this.bettingPattern = null
+	}
+	public void selectPlayerStyle(String style){
+		if(style.equalsIgnoreCase("aggro")  ){
+			this.playerStyle = new AggroStyle();
+		}
+		else if(style.equalsIgnoreCase("neutral")  ){
+			this.playerStyle = new NeutralStyle();
+		}
+		else if(style.equalsIgnoreCase("passive")) {
+			this.playerStyle = new PassiveStyle();
+		}
+		else {
+			this.playerStyle = null;
+		}
+		
 	}
 
-	public boolean repOK()
-	{
-		if( name == null || style == null )
-			return false;
-		else
-			return true;
-	}
+
+	// public void setStartHandSelection(PlayerStyle startHandSelection){
+	// 	this.startHandSelection = startHandSelection;
+	// }
+
+	// public PlayerStyle getStartHandSelection(){
+	// 	return this.startHandSelection;
+	// }
+
+	// public void setBettingPattern(PlayerStyle bettingPattern){
+	// 	this.bettingPattern = bettingPattern;
+	// }
+
+	// public PlayerStyle getBettingDegree(){
+	// 	return this.bettingPattern;
+
+	
+
 }

@@ -1,24 +1,32 @@
 public abstract class BettingStructure{
-  double bigBlind,//Variable to capture the current big blind.
-                 smallBlind;//Variable to capture the current small blind.
-  
-  abstract public void setBigBlind(Double bigBlind);
-  //Setter for a BettingStructure object's bigBlinds.
-  
-  abstract public double getBigBlind();
-  //Abstract Getter for bigBlinds.
-  
-  abstract public void setSmallBlind(Double smallBlind);
-  //Abstract Setter for smallBlinds.
-  
-  abstract public double getSmallBlind();
-  //Abstract Getter for smallBlinds
-  
-  abstract public String toString();
-  //AF implementation for the Abstract Betting Structure class.
-  
-  abstract public boolean repOK();
-  //RI implementation for the Abstract Betting Structure class.
-  
+	double bigBlind ;//Variable to capture the current big blind.
+	double smallBlind;//Variable to capture the current small blind.
+
+	public void setSmallBlind(Double smallBlind){
+		// Setter for smallBlinds.
+		 this.smallBlind = smallBlind;
+	}
+
+	public double getSmallBlind(){
+    	return this.smallBlind;
+	}
+
+	public void setBigBlind(Double bigBlind){
+		//Setter for a "Limit" object's bigBlind variable.
+		this.bigBlind = bigBlind; 
+	}
+
+	public double getBigBlind(){
+		// Getter for bigBlinds.
+	    return this.bigBlind;
+	}
+	
+
+	public abstract String toString();
+	//AF implementation for the  Betting Structure class.
+
+	public  abstract boolean repOK();
+	//RI implementation for the  Betting Structure class.
+
    
 }
